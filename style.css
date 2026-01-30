@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --subtitle-text: #666;
+    --heading-border: #eee;
+    --heading-text: #444;
+    --meta-text: #888;
+    --link-hover: #000;
+    --lang-inactive: #888;
+    --lang-divider: #eee;
+    --guide-bg: #f9f9f9;
+    --guide-border: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --text: #e0e0e0;
+        --subtitle-text: #aaa;
+        --heading-border: #333;
+        --heading-text: #bbb;
+        --meta-text: #999;
+        --link-hover: #fff;
+        --lang-inactive: #666;
+        --lang-divider: #222;
+        --guide-bg: #1a1a1a;
+        --guide-border: #333;
+    }
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+header {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.lang-switcher {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--lang-inactive);
+}
+
+.lang-switcher a {
+    text-decoration: none;
+    padding: 0 0.25rem;
+    color: inherit;
+}
+
+.lang-switcher a:hover {
+    color: var(--link-hover);
+}
+
+.lang-switcher a.active {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.lang-switcher span {
+    color: var(--lang-divider);
+    user-select: none;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--subtitle-text);
+    margin-top: 0.25rem;
+}
+
+section {
+    margin-bottom: 3.5rem;
+}
+
+h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--heading-border);
+    padding-bottom: 0.5rem;
+    color: var(--heading-text);
+}
+
+p {
+    margin: 0 0 1.25rem 0;
+}
+
+.bio-section h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--meta-text);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.bio-content {
+    margin-bottom: 2rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 0.75rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration-thickness: 2px;
+}
+
+.media-list li,
+.meta-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.media-year,
+.meta-value {
+    color: var(--meta-text);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.guide-box {
+    background: var(--guide-bg);
+    padding: 1rem;
+    border-left: 2px solid var(--guide-border);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 3rem 1.5rem;
+    }
+
+    .media-list li,
+    .meta-list li {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
+
+/* UX Enhancements */
+.copy-feedback {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #27ae60;
+    margin-left: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copy-feedback.show {
+    opacity: 1;
+}
+
+#contact a {
+    cursor: copy;
+}
+
+footer {
+    margin-top: 6rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--heading-border);
+    font-size: 0.75rem;
+    color: var(--meta-text);
+    text-align: center;
+}
+
+@media print {
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 11pt;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .lang-switcher {
+        display: none;
+    }
+
+    h2 {
+        border-bottom: 1px solid #000;
+        color: #000;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8rem;
+        color: #444;
+    }
+
+    .guide-box {
+        background: transparent;
+        border: 1px solid #eee;
+    }
+}

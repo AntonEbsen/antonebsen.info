@@ -1,0 +1,13 @@
+/* TEAM */
+    Chef: Anton Meier Ebsen Jørgensen
+    Assistant: Antigravity (Advanced Agentic Coding AI by Google DeepMind)
+
+/* THANKS */
+    Google DeepMind - For the AI brains behind this project.
+
+/* SITE */
+    Last update: 2026/01/30
+    Language: HTML5, CSS3
+    Components: Vanilla CSS, SVG Favicon, SEO-logic, Multilingual (DA, EN, DE, FR)
+    Doctype: HTML5
+    Software: Antigravity Agent

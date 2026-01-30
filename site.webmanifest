@@ -1,0 +1,16 @@
+{
+  "name": "Anton Meier Ebsen Jørgensen",
+  "short_name": "Anton Ebsen",
+  "description": "Factual Information Hub for Anton Meier Ebsen Jørgensen",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
